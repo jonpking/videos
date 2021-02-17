@@ -7,11 +7,12 @@ import VideoDetail from "./VideoDetail";
 class App extends React.Component {
     state = {
         videos: [],
-        selectedVideo: null
+        selectedVideo: null,
+        term: "burgers"
     }
 
     componentDidMount() {
-        this.onTermSubmit("buildings");
+        this.onTermSubmit(this.state.term);
     }
 
     onTermSubmit = async (term) => {
@@ -33,7 +34,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="ui container">
-                <SearchBar onFormSubmit={this.onTermSubmit} />
+                <SearchBar term={this.state.term} onFormSubmit={this.onTermSubmit} />
                 <div className="ui grid">
                     <div className="ui row">
                         <div className="eleven wide column">

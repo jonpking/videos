@@ -2,7 +2,7 @@ import React from "react";
 
 class SearchBar extends React.Component {
     state = {
-        term: "buildings"
+        term: this.props.term
     }
 
     onInputChange = event => {
